@@ -1,0 +1,32 @@
+{
+  "name": "reactapp",
+  "version": "1.0.0",
+  "description": "React App by Ashish",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devashishkumar/reactapp.git"
+  },
+  "keywords": [
+    "React App"
+  ],
+  "author": "Ashish",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devashishkumar/reactapp/issues"
+  },
+  "homepage": "https://github.com/devashishkumar/reactapp#readme",
+  "devDependencies": {
+    "parcel": "^2.10.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}
