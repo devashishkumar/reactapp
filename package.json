@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "React App by Ashish",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel index.html",
     "test": "jest"
   },
   "repository": {
