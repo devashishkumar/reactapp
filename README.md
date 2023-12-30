@@ -17,3 +17,13 @@
 - HTTPs - npm parcel index.html --https
 - Tree Shaking - remove unused codes
 - Different dev and production bundles - npx parcel build index.html
+
+Two types of Export/Import
+
+- Default Export/Import
+
+export default Component
+import Component from "path"
+
+export const component
+import {Component} from "path"
