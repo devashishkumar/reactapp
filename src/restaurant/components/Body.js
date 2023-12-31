@@ -1,4 +1,5 @@
 import RestaurantCardComponent from "./RestaurantCard";
+import ShimmerComponent from "./../../common/ShimmerComponent";
 import { useState, useEffect } from "react";
 import { RESTUARANT_CONSTANTS } from "./../../utils/constants";
 
@@ -28,7 +29,7 @@ const BodyComponent = () => {
     filterTopRatedRestaurant(sData);
   };
   if (restaurantLists.length === 0) {
-    return <h1>Loading...</h1>;
+    return <ShimmerComponent />;
   }
   return (
     <div className="body">
