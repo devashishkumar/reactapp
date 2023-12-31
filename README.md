@@ -34,3 +34,7 @@ import {Component} from "path"
 
 - useState()
 - useEffect()
+
+# Restaurant App page
+
+![restaurantapp](https://github.com/devashishkumar/reactapp/assets/65059534/acffd4db-7d3d-48f1-8ea5-3cdf32792621)
