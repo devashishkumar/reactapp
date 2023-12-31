@@ -1,21 +1,29 @@
 import RestaurantCardComponent from "./RestaurantCard";
+import {useState} from "react";
 
 const BodyComponent = () => {
+
+  // normal variable
+  let restaurantLists1 = JSON.parse(JSON.stringify(resList));
+
+  // local state variable
+  const [restaurantLists, filterTopRatedRestaurant] = useState(restaurantLists1)
   return (
     <div className="body">
       <div className="filter">
         <button
           className="filter-btn"
           onClick={() => {
-            console.log("button clicked");
-            // filter logic
+            const list = JSON.parse(JSON.stringify(resList));
+            const filterData = list.filter((res) => res.info.avgRating > 4.3);
+            filterTopRatedRestaurant(filterData);
           }}
         >
           Top Rated Restaurants
         </button>
       </div>
       <div className="res-container">
-        {resList.map((restaurant) => {
+        {restaurantLists.map((restaurant) => {
           return (
             <RestaurantCardComponent
               key={restaurant.info.id}

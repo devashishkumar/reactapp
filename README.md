@@ -27,3 +27,10 @@ import Component from "path"
 
 export const component
 import {Component} from "path"
+
+# React Hooks
+
+(Normal JS utility functions)
+
+- useState()
+- useEffect()
