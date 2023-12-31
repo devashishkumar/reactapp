@@ -10,7 +10,9 @@ const BodyComponent = () => {
   // local state variable
   // const [restaurantLists, filterTopRatedRestaurant] =
   //   useState(restaurantLists1);
-  const [restaurantLists, filterTopRatedRestaurant] = useState([]);
+  const [restaurantLists, filterRestaurant] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
+  const [searchText, setSearchText] = useState("");
 
   // useEffect is a callback function calls after component rendering
   useEffect(() => {
@@ -26,25 +28,38 @@ const BodyComponent = () => {
     filterData.forEach((f) => {
       sData.push(f.card.card);
     });
-    filterTopRatedRestaurant(sData);
+    filterRestaurant(sData);
+    setFilteredData(sData);
   };
 
-  return (
-    restaurantLists.length === 0 ? <ShimmerComponent /> : <div className="body">
+  return restaurantLists.length === 0 ? (
+    <ShimmerComponent />
+  ) : (
+    <div className="body">
       <div className="filter">
-        <button
-          className="filter-btn"
-          onClick={() => {
-            const list = JSON.parse(JSON.stringify(resList));
-            const filterData = list.filter((res) => res.info.avgRating > 4.3);
-            filterTopRatedRestaurant(filterData);
-          }}
-        >
-          Top Rated Restaurants
-        </button>
+        <div className="search">
+          <input
+            type="text"
+            className="search-box"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          />
+          <button
+            onClick={() => {
+              const filterRes = restaurantLists.filter((res) =>
+                res.info.name.includes(searchText)
+              );
+              setFilteredData(filterRes);
+            }}
+          >
+            Search
+          </button>
+        </div>
       </div>
       <div className="res-container">
-        {restaurantLists.map((restaurant) => {
+        {filteredData.map((restaurant) => {
           return (
             <RestaurantCardComponent
               key={restaurant.info.id}
