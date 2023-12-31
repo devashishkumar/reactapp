@@ -1,13 +1,35 @@
 import RestaurantCardComponent from "./RestaurantCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { RESTUARANT_CONSTANTS } from "./../../utils/constants";
 
 const BodyComponent = () => {
   // normal variable
   let restaurantLists1 = JSON.parse(JSON.stringify(resList));
 
   // local state variable
-  const [restaurantLists, filterTopRatedRestaurant] =
-    useState(restaurantLists1);
+  // const [restaurantLists, filterTopRatedRestaurant] =
+  //   useState(restaurantLists1);
+  const [restaurantLists, filterTopRatedRestaurant] = useState([]);
+
+  // useEffect is a callback function calls after component rendering
+  useEffect(() => {
+    fecthData();
+  }, []);
+  const fecthData = async () => {
+    const data = await fetch(RESTUARANT_CONSTANTS.SWIGGY_URL);
+    const serviceData = await data.json();
+    const filterData = serviceData.data.cards.filter(
+      (res) => res && res.card && res.card.card && res.card.card.info
+    );
+    const sData = [];
+    filterData.forEach((f) => {
+      sData.push(f.card.card);
+    });
+    filterTopRatedRestaurant(sData);
+  };
+  if (restaurantLists.length === 0) {
+    return <h1>Loading...</h1>;
+  }
   return (
     <div className="body">
       <div className="filter">

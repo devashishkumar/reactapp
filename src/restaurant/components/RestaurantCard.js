@@ -8,7 +8,7 @@ const RestaurantCardComponent = (props) => {
   const { resData } = props;
   return (
     <div className="res-card" style={restaurantCardStyle}>
-      <img className="res-logo" src={RESTUARANT_CONSTANTS.BIRYANI_URL} />
+      <img className="res-logo" src={`${RESTUARANT_CONSTANTS.SWIGGY_DISHES_IMAGE_URL}${resData.info.cloudinaryImageId}`} />
       <h3>{resData.info.name}</h3>
       <h4>{resData.info.cuisines.join(", ")}</h4>
       <h4>{resData.info.avgRating}</h4>
