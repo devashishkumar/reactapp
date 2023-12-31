@@ -1,13 +1,13 @@
 import RestaurantCardComponent from "./RestaurantCard";
-import {useState} from "react";
+import { useState } from "react";
 
 const BodyComponent = () => {
-
   // normal variable
   let restaurantLists1 = JSON.parse(JSON.stringify(resList));
 
   // local state variable
-  const [restaurantLists, filterTopRatedRestaurant] = useState(restaurantLists1)
+  const [restaurantLists, filterTopRatedRestaurant] =
+    useState(restaurantLists1);
   return (
     <div className="body">
       <div className="filter">
