@@ -16,7 +16,19 @@ class UserComponent extends React.Component {
     };
   }
 
+  componentDidUpdate() {
+    console.log("component update");
+  }
+
+  componentWillUnmount() {
+    console.log("component will unmount");
+    clearInterval(this.timer);
+  }
+
   async componentDidMount() {
+    this.timer = setInterval(() => {
+        console.log("component did mount");
+    }, 1000);
     console.log(
       "in class based components constructor, render, componentDidMount called"
     );

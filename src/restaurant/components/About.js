@@ -6,8 +6,8 @@ const AboutComponent = () => {
     <div className="about">
       <h2>About</h2>
       <h3>This is react app</h3>
-      <User name={"Ashish Kumar"} location={"India"} contact={"@devashishkumar"}/>
-      <UserComponent name={"Ashish Kumar"} location={"India"} contact={"@devashishkumar"}/>
+      <User name={"Ashish Kumar"} location={"India"} contact={"devashishkumar"}/>
+      <UserComponent name={"Ashish Kumar"} location={"India"} contact={"devashishkumar"}/>
     </div>
   );
 };

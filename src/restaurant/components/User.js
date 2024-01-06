@@ -6,6 +6,14 @@ const User = ({ name, location, contact }) => {
 
   useEffect(() => {
     // service calls
+    setInterval(() => {
+        console.log("component mount");
+    }, 1000);
+
+    // unmount functional component
+    return () => {
+        console.log("useEffect return");
+    }
   }, []);
   return (
     <div className="about">
