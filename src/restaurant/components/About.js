@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-
 const AboutComponent = () => {
   return (
     <div className="about">

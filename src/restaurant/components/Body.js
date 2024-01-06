@@ -2,6 +2,7 @@ import RestaurantCardComponent from "./RestaurantCard";
 import ShimmerComponent from "./../../common/ShimmerComponent";
 import { useState, useEffect } from "react";
 import { RESTUARANT_CONSTANTS } from "./../../utils/constants";
+import { Link } from "react-router-dom";
 
 const BodyComponent = () => {
   // normal variable
@@ -61,10 +62,10 @@ const BodyComponent = () => {
       <div className="res-container">
         {filteredData.map((restaurant) => {
           return (
+            <Link key={restaurant.info.id} to={"/restaurants/"+restaurant.info.id}>
             <RestaurantCardComponent
-              key={restaurant.info.id}
               resData={restaurant}
-            />
+            /></Link>
           );
         })}
       </div>
