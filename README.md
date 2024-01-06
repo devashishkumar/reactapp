@@ -38,3 +38,8 @@ import {Component} from "path"
 # Restaurant App page
 
 ![restaurantapp](https://github.com/devashishkumar/reactapp/assets/65059534/acffd4db-7d3d-48f1-8ea5-3cdf32792621)
+
+# 2 Types Routing in web apps
+
+- Client Side Routing
+- Server Side Routing
