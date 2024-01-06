@@ -68,3 +68,7 @@ h1 {
 .filter {
     display: flex;
 }
+
+.user-card {
+    padding: 10px;
+}
