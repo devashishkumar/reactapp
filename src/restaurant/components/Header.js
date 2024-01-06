@@ -2,8 +2,23 @@ import { RESTUARANT_CONSTANTS } from "./../../utils/constants";
 import { useState, useEffect } from "react";
 
 const Header = () => {
-  // let btnName = "Login";
   const [buttonName, setButtonName] = useState("Login");
+
+  // if no dependency array => useEffect is called on every render
+  useEffect(() => {
+   console.log("render on every time rendering");
+  });
+
+  // if dependency array is empty = [] => useEffect called on initial render (Just once)
+  useEffect(() => {
+    console.log("render after intial render just once"); 
+   }, []);
+
+   // if dependency array is [buttonName] => useEffect called everytime buttonName is updated
+  useEffect(() => {
+    console.log("render everytime buttonName updated"); 
+   }, [buttonName]);
+
   return (
     <div className="header">
       <div className="logo">
