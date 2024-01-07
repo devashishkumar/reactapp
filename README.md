@@ -48,4 +48,5 @@ import {Component} from "path"
 
 npm install -D tailwindcss postcss
 npx tailwindcss init
-![configurationurl](https://tailwindcss.com/docs/guides/parcel)
+
+[Tailwind CSS Configuration with Parcel](https://tailwindcss.com/docs/guides/parcel)
