@@ -1,6 +1,7 @@
 import { RESTUARANT_CONSTANTS } from "./../../utils/constants";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../../utils/useOnlineStatus";
 
 const Header = () => {
   const [buttonName, setButtonName] = useState("Login");
@@ -20,6 +21,8 @@ const Header = () => {
     console.log("render everytime buttonName updated"); 
    }, [buttonName]);
 
+   const onlineStatus = useOnlineStatus();
+
   return (
     <div className="header">
       <div className="logo">
@@ -27,6 +30,7 @@ const Header = () => {
       </div>
       <div className="nav-items">
         <ul>
+          <li>Online Status: {onlineStatus === true ? "Online": "Offline"}</li>
           <li>
             <Link to="/">Home</Link>
             </li>

@@ -3,6 +3,7 @@ import ShimmerComponent from "./../../common/ShimmerComponent";
 import { useState, useEffect } from "react";
 import { RESTUARANT_CONSTANTS } from "./../../utils/constants";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../../utils/useOnlineStatus";
 
 const BodyComponent = () => {
   // normal variable
@@ -32,6 +33,12 @@ const BodyComponent = () => {
     filterRestaurant(sData);
     setFilteredData(sData);
   };
+  const onlineStatus = useOnlineStatus();
+  if (onlineStatus === false) {
+    return (
+      <h1>Looks like you are offline! Please check your internet connection</h1>
+    );
+  }
 
   return restaurantLists.length === 0 ? (
     <ShimmerComponent />
@@ -62,10 +69,12 @@ const BodyComponent = () => {
       <div className="res-container">
         {filteredData.map((restaurant) => {
           return (
-            <Link key={restaurant.info.id} to={"/restaurants/"+restaurant.info.id}>
-            <RestaurantCardComponent
-              resData={restaurant}
-            /></Link>
+            <Link
+              key={restaurant.info.id}
+              to={"/restaurants/" + restaurant.info.id}
+            >
+              <RestaurantCardComponent resData={restaurant} />
+            </Link>
           );
         })}
       </div>
