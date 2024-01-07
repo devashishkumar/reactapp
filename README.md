@@ -46,7 +46,7 @@ import {Component} from "path"
 
 # Tailwing CSS setup while using parcel in react
 
-npm install -D tailwindcss postcss
-npx tailwindcss init
+- npm install -D tailwindcss postcss
+- npx tailwindcss init
 
 [Tailwind CSS Configuration with Parcel](https://tailwindcss.com/docs/guides/parcel)
