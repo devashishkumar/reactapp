@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { RESTUARANT_CONSTANTS } from "../../utils/constants";
 import ShimmerComponent from "../../common/ShimmerComponent";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../../utils/useRestaurantMenu";
@@ -27,7 +26,7 @@ const RestaurantMenusComponent = () => {
     resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
 
   return (
-    <div className="menu">
+    <div className="menu m-4 p-4 w-[250px] rounded-lg bg-gray-50">
       <h1>{name}</h1>
       <h2>{cuisines}</h2>
       <h2>{costForTwoMessage}</h2>
@@ -40,7 +39,6 @@ const RestaurantMenusComponent = () => {
             </li>
           );
         })}
-        ;
       </ul>
     </div>
   );

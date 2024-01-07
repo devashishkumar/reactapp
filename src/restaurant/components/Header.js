@@ -24,20 +24,20 @@ const Header = () => {
    const onlineStatus = useOnlineStatus();
 
   return (
-    <div className="header">
-      <div className="logo">
+    <div className="flex justify-between bg-pink-50 shadow-lg px">
+      <div className="w-32">
         <img src={RESTUARANT_CONSTANTS.HEADER_IMAGE} />
       </div>
-      <div className="nav-items">
-        <ul>
-          <li>Online Status: {onlineStatus === true ? "Online": "Offline"}</li>
-          <li>
+      <div className="flex items-center">
+        <ul className="flex p-4 m-4">
+          <li className="px-4">Online Status: {onlineStatus === true ? <span>&#10003;</span>: <span>&#x292B;</span>}</li>
+          <li className="px-4">
             <Link to="/">Home</Link>
             </li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/contact">Contact Us</Link></li>
-          <li>Cart</li>
-          <li><button className="login" onClick={() => {
+          <li className="px-4"><Link to="/about">About</Link></li>
+          <li className="px-4"><Link to="/contact">Contact Us</Link></li>
+          <li className="px-4">Cart</li>
+          <li className="px-4"><button className="login" onClick={() => {
             console.log("Button Click");
             const name = buttonName === "Login" ? "Logout" : "Login";
             setButtonName(name)

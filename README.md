@@ -43,3 +43,9 @@ import {Component} from "path"
 
 - Client Side Routing
 - Server Side Routing
+
+# Tailwing CSS setup while using parcel in react
+
+npm install -D tailwindcss postcss
+npx tailwindcss init
+![configurationurl](https://tailwindcss.com/docs/guides/parcel)

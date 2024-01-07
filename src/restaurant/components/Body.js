@@ -45,16 +45,17 @@ const BodyComponent = () => {
   ) : (
     <div className="body">
       <div className="filter">
-        <div className="search">
+        <div className="search m-4 p-4">
           <input
             type="text"
-            className="search-box"
+            className="border border-solid border-black"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
           <button
+          className="px-4 py-1 bg-green-100 m-4 rounded-lg"
             onClick={() => {
               const filterRes = restaurantLists.filter((res) =>
                 res.info.name.includes(searchText)
@@ -66,7 +67,7 @@ const BodyComponent = () => {
           </button>
         </div>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap">
         {filteredData.map((restaurant) => {
           return (
             <Link
