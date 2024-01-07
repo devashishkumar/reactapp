@@ -37,7 +37,7 @@ import {Component} from "path"
 
 # Restaurant App page
 
-![restaurantapp](https://github.com/devashishkumar/reactapp/assets/65059534/acffd4db-7d3d-48f1-8ea5-3cdf32792621)
+![restaurant-app-update-ui-tailwind](https://github.com/devashishkumar/reactapp/assets/65059534/e9ca0d04-f381-47c8-8d50-b2382377db76)
 
 # 2 Types Routing in web apps
 
