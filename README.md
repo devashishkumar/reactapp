@@ -39,6 +39,10 @@ import {Component} from "path"
 
 ![restaurant-app-update-ui-tailwind](https://github.com/devashishkumar/reactapp/assets/65059534/e9ca0d04-f381-47c8-8d50-b2382377db76)
 
+# Restaurant Menu Categorires
+
+![restaurant-items-categories](https://github.com/devashishkumar/reactapp/assets/65059534/76e51466-1e08-4f7a-b7cd-923161752fb2)
+
 # 2 Types Routing in web apps
 
 - Client Side Routing
