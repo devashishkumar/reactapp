@@ -14,4 +14,20 @@ const RestaurantCardComponent = (props) => {
   );
 };
 
+// Higner Order Component
+
+// input - RestaurantCard => RestaurantCardPromoted
+
+export const withPromotedLabel = (restaurantCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label className="absolute bg-black text-white m-2 p-2 rounded-lg">Promoted</label>
+        <RestaurantCardComponent {...props}/>
+      </div>
+    );
+  };
+
+};
+
 export default RestaurantCardComponent;

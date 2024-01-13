@@ -1,4 +1,4 @@
-import RestaurantCardComponent from "./RestaurantCard";
+import RestaurantCardComponent, { withPromotedLabel } from "./RestaurantCard";
 import ShimmerComponent from "./../../common/ShimmerComponent";
 import { useState, useEffect } from "react";
 import { RESTUARANT_CONSTANTS } from "./../../utils/constants";
@@ -15,6 +15,8 @@ const BodyComponent = () => {
   const [restaurantLists, filterRestaurant] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [searchText, setSearchText] = useState("");
+
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCardComponent);
 
   // useEffect is a callback function calls after component rendering
   useEffect(() => {
@@ -55,7 +57,7 @@ const BodyComponent = () => {
             }}
           />
           <button
-          className="px-4 py-1 bg-green-100 m-4 rounded-lg"
+            className="px-4 py-1 bg-green-100 m-4 rounded-lg"
             onClick={() => {
               const filterRes = restaurantLists.filter((res) =>
                 res.info.name.includes(searchText)
@@ -74,7 +76,11 @@ const BodyComponent = () => {
               key={restaurant.info.id}
               to={"/restaurants/" + restaurant.info.id}
             >
-              <RestaurantCardComponent resData={restaurant} />
+              {restaurant.info.promoted ? (
+                <RestaurantCardPromoted resData={restaurant} />
+              ) : (
+                <RestaurantCardComponent resData={restaurant} />
+              )}
             </Link>
           );
         })}
