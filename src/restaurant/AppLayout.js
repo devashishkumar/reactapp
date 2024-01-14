@@ -1,7 +1,8 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import UserContext from "../utils/UserContext";
 
 // eager loading
 // import AboutComponent from "./components/About";
@@ -25,12 +26,19 @@ const ContactComponent = lazy(() => import("./components/Contact"));
 const BodyComponent = lazy(() => import("./components/Body"));
 
 const AppLayoutComponent = () => {
+  const [userName, setUserName] = useState();
+  useEffect(() => {
+    setUserName("Ashish");
+  });
   return (
-    <div className="app">
-      <Header />
-      {/* <BodyComponent /> */}
-      <Outlet />
-    </div>
+    /* to override UserContext data */
+    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+      <div className="app">
+        <Header />
+        {/* <BodyComponent /> */}
+        <Outlet />
+      </div>
+    </UserContext.Provider>
   );
 };
 

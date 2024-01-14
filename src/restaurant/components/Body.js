@@ -1,9 +1,10 @@
 import RestaurantCardComponent, { withPromotedLabel } from "./RestaurantCard";
 import ShimmerComponent from "./../../common/ShimmerComponent";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { RESTUARANT_CONSTANTS } from "./../../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../../utils/useOnlineStatus";
+import UserContext from "../../utils/UserContext";
 
 const BodyComponent = () => {
   // normal variable
@@ -35,6 +36,7 @@ const BodyComponent = () => {
     filterRestaurant(sData);
     setFilteredData(sData);
   };
+  const { loggedInUser, setUserName } = useContext(UserContext);
   const onlineStatus = useOnlineStatus();
   if (onlineStatus === false) {
     return (
@@ -67,6 +69,18 @@ const BodyComponent = () => {
           >
             Search
           </button>
+        </div>
+
+        <div className="search m-4 p-4">
+          <input
+            type="text"
+            className="border border-solid border-black"
+            placeholder="Username"
+            value={loggedInUser}
+            onChange={(e) => {
+              setUserName(e.target.value);
+            }}
+          />
         </div>
       </div>
       <div className="flex flex-wrap">

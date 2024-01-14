@@ -1,7 +1,8 @@
 import { RESTUARANT_CONSTANTS } from "./../../utils/constants";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../../utils/useOnlineStatus";
+import UserContext from "../../utils/UserContext";
 
 const Header = () => {
   const [buttonName, setButtonName] = useState("Login");
@@ -23,6 +24,8 @@ const Header = () => {
 
    const onlineStatus = useOnlineStatus();
 
+   const {loggedInUser} = useContext(UserContext);
+
   return (
     <div className="flex justify-between bg-pink-50 shadow-lg px">
       <div className="w-32">
@@ -42,6 +45,7 @@ const Header = () => {
             const name = buttonName === "Login" ? "Logout" : "Login";
             setButtonName(name)
           }}> {buttonName}</button></li>
+          <li className="px-4 font-bold">{loggedInUser}</li>
         </ul>
       </div>
     </div>
