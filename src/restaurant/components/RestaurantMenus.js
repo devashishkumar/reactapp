@@ -19,6 +19,7 @@ const RestaurantMenusComponent = () => {
 
   // custom hook
   const resInfo = useRestaurantMenu(resId);
+  const [showIndex, setShowIndex] = useState(0);
 
   if (resInfo === null) return <ShimmerComponent />;
   const { name, cuisines, costForTwoMessage } =
@@ -40,11 +41,13 @@ const RestaurantMenusComponent = () => {
       </p>
 
       <ul>
-        {categories.map((category) => {
+        {categories.map((category, index) => {
           return (
             <RestaurantCategoryComponent
               key={category?.card?.card.title}
               data={category?.card?.card}
+              showItems={index === showIndex && true}
+              setShowIndex={() => setShowIndex(index)}
             />
           );
         })}
