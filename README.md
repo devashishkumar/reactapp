@@ -61,3 +61,9 @@ import {Component} from "path"
 - npm install -D parcel
 - -D means dev dependencies (required in development phase)
 - npx parcel index.html
+- npm install react raect-dom
+- npx parcel build index.html
+
+<script type="module" src="src/restaurant/AppLayout.js"></script>
+
+- use type = "module" for js file to make it understood for browser
