@@ -54,3 +54,10 @@ import {Component} from "path"
 - npx tailwindcss init
 
 [Tailwind CSS Configuration with Parcel](https://tailwindcss.com/docs/guides/parcel)
+
+
+# Parcel
+
+- npm install -D parcel
+- -D means dev dependencies (required in development phase)
+- npx parcel index.html
